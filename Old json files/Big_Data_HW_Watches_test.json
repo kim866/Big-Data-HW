@@ -1,0 +1,1307 @@
+{
+  "paragraphs": [
+    {
+      "title": "",
+      "text": "%pyspark\n# Read in data from S3 Buckets\nfrom pyspark import SparkFiles\nurl \u003d\"https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Watches_v1_00.tsv.gz\"\nspark.sparkContext.addFile(url)\ndf \u003d spark.read.csv(SparkFiles.get(\"amazon_reviews_us_Watches_v1_00.tsv.gz\"), sep\u003d\"\\t\", header\u003dTrue)\n\n# Show DataFrame\ndf.show()",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:36:57.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+-----------+-----------+--------------+----------+--------------+--------------------+----------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-----------+\n|marketplace|customer_id|     review_id|product_id|product_parent|       product_title|product_category|star_rating|helpful_votes|total_votes|vine|verified_purchase|     review_headline|         review_body|review_date|\n+-----------+-----------+--------------+----------+--------------+--------------------+----------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-----------+\n|         US|    3653882|R3O9SGZBVQBV76|B00FALQ1ZC|     937001370|Invicta Women\u0027s 1...|         Watches|          5|            0|          0|   N|                Y|          Five Stars|Absolutely love t...| 2015-08-31|\n|         US|   14661224| RKH8BNC3L5DLF|B00D3RGO20|     484010722|Kenneth Cole New ...|         Watches|          5|            0|          0|   N|                Y|I love thiswatch ...|I love this watch...| 2015-08-31|\n|         US|   27324930|R2HLE8WKZSU3NL|B00DKYC7TK|     361166390|Ritche 22mm Black...|         Watches|          2|            1|          1|   N|                Y|           Two Stars|           Scratches| 2015-08-31|\n|         US|    7211452|R31U3UH5AZ42LL|B000EQS1JW|     958035625|Citizen Men\u0027s BM8...|         Watches|          5|            0|          0|   N|                Y|          Five Stars|It works well on ...| 2015-08-31|\n|         US|   12733322|R2SV659OUJ945Y|B00A6GFD7S|     765328221|Orient ER27009B M...|         Watches|          4|            0|          0|   N|                Y|Beautiful face, b...|Beautiful watch f...| 2015-08-31|\n|         US|    6576411| RA51CP8TR5A2L|B00EYSOSE8|     230493695|Casio Men\u0027s GW-94...|         Watches|          5|            0|          0|   N|                Y|       No complaints|i love this watch...| 2015-08-31|\n|         US|   11811565| RB2Q7DLDN6TH6|B00WM0QA3M|     549298279|Fossil Women\u0027s ES...|         Watches|          5|            1|          1|   N|                Y|          Five Stars|for my wife and s...| 2015-08-31|\n|         US|   49401598|R2RHFJV0UYBK3Y|B00A4EYBR0|     844009113|INFANTRY Mens Nig...|         Watches|          1|            1|          5|   N|                N|I was about to bu...|I was about to bu...| 2015-08-31|\n|         US|   45925069|R2Z6JOQ94LFHEP|B00MAMPGGE|     263720892|G-Shock Men\u0027s Gre...|         Watches|          5|            1|          2|   N|                Y|      Perfect watch!|Watch is perfect....| 2015-08-31|\n|         US|   44751341| RX27XIIWY5JPB|B004LBPB7Q|     124278407|Heiden Quad Watch...|         Watches|          4|            0|          0|   N|                Y|Great quality and...|Great quality and...| 2015-08-31|\n|         US|    9962330|R15C7QEZT0LGZN|B00KGTVGKS|      28017857|Fossil Women\u0027s ES...|         Watches|          4|            2|          2|   N|                Y|           Satisfied|The watch was pre...| 2015-08-31|\n|         US|   16097204|R361XSS37V0NCZ|B0039UT5OU|     685450910|Casio General Men...|         Watches|          1|            0|          0|   N|                N|I do not think th...|I bought this wat...| 2015-08-31|\n|         US|   51330346| ROTNLALUAJAUB|B00MPF0XJQ|     767769082|2Tone Gold Silver...|         Watches|          3|            0|          0|   N|                Y|         Three Stars|It is a cheap wat...| 2015-08-31|\n|         US|    4201739|R2DYX7QU6BGOHR|B003P1OHHS|     648595227|Bulova Men\u0027s 98B1...|         Watches|          5|            0|          0|   N|                Y|          Five Stars|Heavier than i th...| 2015-08-31|\n|         US|   26339765| RWASY7FKI7QOT|B00R70YEOE|     457338020|Casio - G-Shock -...|         Watches|          5|            2|          3|   N|                Y|  Worth it - love it|Had it for severa...| 2015-08-31|\n|         US|    2692576|R2KKYZIN3CCL21|B000FVE3BG|     824370661|Invicta Men\u0027s 332...|         Watches|          5|            0|          0|   N|                Y|This is when diff...|This one is diffe...| 2015-08-31|\n|         US|   44713366|R22H4FGVD5O52O|B008X6JB12|     814431355|Seiko Women\u0027s SUT...|         Watches|          4|            1|          1|   N|                Y|Thewatch is attra...|The watch is attr...| 2015-08-31|\n|         US|   32778769|R11UACZERCM4ZY|B0040UOFPW|     187700878|Anne Klein Women\u0027...|         Watches|          5|            0|          0|   N|                Y|          Five Stars|      said my wife..| 2015-08-31|\n|         US|   27258523|R1AT8NQ38UQOL6|B00UR2R5UY|     594315262|Guess U13630G1 Me...|         Watches|          5|            0|          0|   N|                Y|          Five Stars|Nice watch, on ti...| 2015-08-31|\n|         US|   42646538|R2NCZRQGIF1Q75|B00HFF57L0|     520810507|Nixon Men\u0027s Geo V...|         Watches|          4|            0|          0|   N|                Y|        Very stylish|Looks great and l...| 2015-08-31|\n+-----------+-----------+--------------+----------+--------------+--------------------+----------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-----------+\nonly showing top 20 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-173452_1332805920",
+      "dateCreated": "2019-05-06 17:34:52.000",
+      "dateStarted": "2019-05-06 17:36:11.207",
+      "dateFinished": "2019-05-06 17:36:57.030",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\nprint(df.count())\ndf \u003d df.dropna()\nprint(df.count())\ndf \u003d df.dropDuplicates()\nprint(df.count())",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:42:55.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "960872\n960679\n960679\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-173452_494878320",
+      "dateCreated": "2019-05-06 17:34:52.000",
+      "dateStarted": "2019-05-06 17:36:57.037",
+      "dateFinished": "2019-05-06 17:37:27.463",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\ndf.printSchema",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:37:27.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "\u003cbound method DataFrame.printSchema of DataFrame[marketplace: string, customer_id: string, review_id: string, product_id: string, product_parent: string, product_title: string, product_category: string, star_rating: string, helpful_votes: string, total_votes: string, vine: string, verified_purchase: string, review_headline: string, review_body: string, review_date: string]\u003e",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-173452_1445973331",
+      "dateCreated": "2019-05-06 17:34:52.000",
+      "dateStarted": "2019-05-06 17:37:27.465",
+      "dateFinished": "2019-05-06 17:37:27.582",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nfrom pyspark.sql.types import StructField, StringType, IntegerType, StructType\nfrom pyspark.sql.types import DateType\n\nschema \u003d [StructField(\"marketplace\", StringType(), True),\\\n          StructField(\"customer_id\", IntegerType(), True),\\\n          StructField(\"review_id\", StringType(), True),\\\n          StructField(\"product_id\", StringType(), True),\\\n          StructField(\"product_parent\", IntegerType(), True),\\\n          StructField(\"product_title\", StringType(), True),\\\n          StructField(\"product_category\", StringType(), True),\\\n          StructField(\"star_rating\", IntegerType(), True),\\\n          StructField(\"helpful_votes\", IntegerType(), True),\\\n          StructField(\"total_votes\", IntegerType(), True),\\\n          StructField(\"vine\", StringType(), True),\\\n          StructField(\"verified_purchase\", StringType(), True),\\\n          StructField(\"review_headline\", StringType(), True),\\\n          StructField(\"review_body\", StringType(), True),\\\n          StructField(\"review_date\", DateType(), True)\\\n          ,]\n\nschema",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:37:27.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "[StructField(marketplace,StringType,true),\n StructField(customer_id,IntegerType,true),\n StructField(review_id,StringType,true),\n StructField(product_id,StringType,true),\n StructField(product_parent,IntegerType,true),\n StructField(product_title,StringType,true),\n StructField(product_category,StringType,true),\n StructField(star_rating,IntegerType,true),\n StructField(helpful_votes,IntegerType,true),\n StructField(total_votes,IntegerType,true),\n StructField(vine,StringType,true),\n StructField(verified_purchase,StringType,true),\n StructField(review_headline,StringType,true),\n StructField(review_body,StringType,true),\n StructField(review_date,DateType,true)]",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-173452_130610373",
+      "dateCreated": "2019-05-06 17:34:52.000",
+      "dateStarted": "2019-05-06 17:37:27.583",
+      "dateFinished": "2019-05-06 17:37:27.701",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nfinal \u003d StructType(fields\u003dschema)\nfinal",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:37:27.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "StructType(List(StructField(marketplace,StringType,true),StructField(customer_id,IntegerType,true),StructField(review_id,StringType,true),StructField(product_id,StringType,true),StructField(product_parent,IntegerType,true),StructField(product_title,StringType,true),StructField(product_category,StringType,true),StructField(star_rating,IntegerType,true),StructField(helpful_votes,IntegerType,true),StructField(total_votes,IntegerType,true),StructField(vine,StringType,true),StructField(verified_purchase,StringType,true),StructField(review_headline,StringType,true),StructField(review_body,StringType,true),StructField(review_date,DateType,true)))",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-173452_171978900",
+      "dateCreated": "2019-05-06 17:34:52.000",
+      "dateStarted": "2019-05-06 17:37:27.703",
+      "dateFinished": "2019-05-06 17:37:27.818",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\ndataframe \u003d spark.read.csv(SparkFiles.get(\"amazon_reviews_us_Watches_v1_00.tsv.gz\"), sep\u003d\"\\t\", schema\u003dfinal, header\u003dTrue)\ndataframe.show(5)",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:37:28.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+-----------+-----------+--------------+----------+--------------+--------------------+----------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-----------+\n|marketplace|customer_id|     review_id|product_id|product_parent|       product_title|product_category|star_rating|helpful_votes|total_votes|vine|verified_purchase|     review_headline|         review_body|review_date|\n+-----------+-----------+--------------+----------+--------------+--------------------+----------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-----------+\n|         US|    3653882|R3O9SGZBVQBV76|B00FALQ1ZC|     937001370|Invicta Women\u0027s 1...|         Watches|          5|            0|          0|   N|                Y|          Five Stars|Absolutely love t...| 2015-08-31|\n|         US|   14661224| RKH8BNC3L5DLF|B00D3RGO20|     484010722|Kenneth Cole New ...|         Watches|          5|            0|          0|   N|                Y|I love thiswatch ...|I love this watch...| 2015-08-31|\n|         US|   27324930|R2HLE8WKZSU3NL|B00DKYC7TK|     361166390|Ritche 22mm Black...|         Watches|          2|            1|          1|   N|                Y|           Two Stars|           Scratches| 2015-08-31|\n|         US|    7211452|R31U3UH5AZ42LL|B000EQS1JW|     958035625|Citizen Men\u0027s BM8...|         Watches|          5|            0|          0|   N|                Y|          Five Stars|It works well on ...| 2015-08-31|\n|         US|   12733322|R2SV659OUJ945Y|B00A6GFD7S|     765328221|Orient ER27009B M...|         Watches|          4|            0|          0|   N|                Y|Beautiful face, b...|Beautiful watch f...| 2015-08-31|\n+-----------+-----------+--------------+----------+--------------+--------------------+----------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-----------+\nonly showing top 5 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-173452_2087434028",
+      "dateCreated": "2019-05-06 17:34:52.000",
+      "dateStarted": "2019-05-06 17:37:27.819",
+      "dateFinished": "2019-05-06 17:37:28.083",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nreview_id_table \u003d dataframe.select([\"review_id\", \"customer_id\", \"product_id\", \"product_parent\", \"review_date\"])\n\nreview_id_table.show(5)\n",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:37:28.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+--------------+-----------+----------+--------------+-----------+\n|     review_id|customer_id|product_id|product_parent|review_date|\n+--------------+-----------+----------+--------------+-----------+\n|R3O9SGZBVQBV76|    3653882|B00FALQ1ZC|     937001370| 2015-08-31|\n| RKH8BNC3L5DLF|   14661224|B00D3RGO20|     484010722| 2015-08-31|\n|R2HLE8WKZSU3NL|   27324930|B00DKYC7TK|     361166390| 2015-08-31|\n|R31U3UH5AZ42LL|    7211452|B000EQS1JW|     958035625| 2015-08-31|\n|R2SV659OUJ945Y|   12733322|B00A6GFD7S|     765328221| 2015-08-31|\n+--------------+-----------+----------+--------------+-----------+\nonly showing top 5 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-173452_1181305707",
+      "dateCreated": "2019-05-06 17:34:52.000",
+      "dateStarted": "2019-05-06 17:37:28.084",
+      "dateFinished": "2019-05-06 17:37:28.352",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nproducts \u003d dataframe.select([\"product_id\", \"product_title\"])\n\nproducts.show(5)\n\n",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:37:28.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+----------+--------------------+\n|product_id|       product_title|\n+----------+--------------------+\n|B00FALQ1ZC|Invicta Women\u0027s 1...|\n|B00D3RGO20|Kenneth Cole New ...|\n|B00DKYC7TK|Ritche 22mm Black...|\n|B000EQS1JW|Citizen Men\u0027s BM8...|\n|B00A6GFD7S|Orient ER27009B M...|\n+----------+--------------------+\nonly showing top 5 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-173452_1008124466",
+      "dateCreated": "2019-05-06 17:34:52.000",
+      "dateStarted": "2019-05-06 17:37:28.354",
+      "dateFinished": "2019-05-06 17:37:28.567",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\ncustomer_table \u003d dataframe.select([\"customer_id\"])\n\ncustomer_table.show(10)",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:37:28.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+-----------+\n|customer_id|\n+-----------+\n|    3653882|\n|   14661224|\n|   27324930|\n|    7211452|\n|   12733322|\n|    6576411|\n|   11811565|\n|   49401598|\n|   45925069|\n|   44751341|\n+-----------+\nonly showing top 10 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-173452_1072730057",
+      "dateCreated": "2019-05-06 17:34:52.000",
+      "dateStarted": "2019-05-06 17:37:28.569",
+      "dateFinished": "2019-05-06 17:37:28.735",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\ndef dfZipWithIndex(df, offset\u003d1, colName\u003d\"rowId\"):\n\n\n    new_schema \u003d StructType(\n\n        df.schema.fields  # previous schema\n        +[StructField(colName, LongType(), True)]  # new added field to back\n    )\n\n    zipped_rdd \u003d df.rdd.zipWithIndex()\n\n    new_rdd \u003d zipped_rdd.map(lambda (row, rowId): (list(row) + [rowId + offset] ))\n\n    return spark.createDataFrame(new_rdd, new_schema)",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:37:28.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-173452_2017214769",
+      "dateCreated": "2019-05-06 17:34:52.000",
+      "dateStarted": "2019-05-06 17:37:28.737",
+      "dateFinished": "2019-05-06 17:37:28.849",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nfrom pyspark.sql.types import LongType\ncustomer_table \u003d dfZipWithIndex(customer_table, offset\u003d1, colName\u003d\"customer_count\")\n\ncustomer_table.show(10)",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:37:30.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+-----------+--------------+\n|customer_id|customer_count|\n+-----------+--------------+\n|    3653882|             1|\n|   14661224|             2|\n|   27324930|             3|\n|    7211452|             4|\n|   12733322|             5|\n|    6576411|             6|\n|   11811565|             7|\n|   49401598|             8|\n|   45925069|             9|\n|   44751341|            10|\n+-----------+--------------+\nonly showing top 10 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-173452_1168546136",
+      "dateCreated": "2019-05-06 17:34:52.000",
+      "dateStarted": "2019-05-06 17:37:28.850",
+      "dateFinished": "2019-05-06 17:37:30.317",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nvine_table \u003d dataframe.select([\"review_id\", \"star_rating\", \"helpful_votes\", \"total_votes\", \"vine\"])\n\nvine_table.show(5)\n",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:37:30.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+--------------+-----------+-------------+-----------+----+\n|     review_id|star_rating|helpful_votes|total_votes|vine|\n+--------------+-----------+-------------+-----------+----+\n|R3O9SGZBVQBV76|          5|            0|          0|   N|\n| RKH8BNC3L5DLF|          5|            0|          0|   N|\n|R2HLE8WKZSU3NL|          2|            1|          1|   N|\n|R31U3UH5AZ42LL|          5|            0|          0|   N|\n|R2SV659OUJ945Y|          4|            0|          0|   N|\n+--------------+-----------+-------------+-----------+----+\nonly showing top 5 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-173452_722747195",
+      "dateCreated": "2019-05-06 17:34:52.000",
+      "dateStarted": "2019-05-06 17:37:30.318",
+      "dateFinished": "2019-05-06 17:37:30.530",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\navg_df \u003d vine_table.groupBy(\"vine\").avg()\navg_df.show()",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:37:37.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+----+-----------------+------------------+-----------------+\n|vine| avg(star_rating)|avg(helpful_votes)| avg(total_votes)|\n+----+-----------------+------------------+-----------------+\n|   Y|4.034344590726961|2.8580423583285635|3.712077847738981|\n|   N| 4.13847204483253|1.1938016421217255|1.557187019418741|\n+----+-----------------+------------------+-----------------+\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-173452_886912423",
+      "dateCreated": "2019-05-06 17:34:52.000",
+      "dateStarted": "2019-05-06 17:37:30.532",
+      "dateFinished": "2019-05-06 17:37:37.365",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\ntest_df \u003d dataframe.select([\"customer_id\", \"product_id\", \"product_title\", \"star_rating\", \"helpful_votes\", \"total_votes\", \"vine\"])",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:42:03.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-173452_396801452",
+      "dateCreated": "2019-05-06 17:34:52.000",
+      "dateStarted": "2019-05-06 17:42:03.460",
+      "dateFinished": "2019-05-06 17:42:03.572",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nvine_only \u003d dataframe.select([\"product_id\"])",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:42:45.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-174203_1875585891",
+      "dateCreated": "2019-05-06 17:42:03.000",
+      "dateStarted": "2019-05-06 17:42:45.457",
+      "dateFinished": "2019-05-06 17:42:45.571",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nvine_only \u003d vine_only.dropDuplicates()\n\nvine_only.show(5)",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:43:31.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+----------+\n|product_id|\n+----------+\n|B00BNPIAIU|\n|B000VC7RBW|\n|B00B527SLG|\n|B004JOM1YQ|\n|B008FV7P2M|\n+----------+\nonly showing top 5 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-174236_1873646773",
+      "dateCreated": "2019-05-06 17:42:36.000",
+      "dateStarted": "2019-05-06 17:43:25.413",
+      "dateFinished": "2019-05-06 17:43:31.742",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nfrom pyspark.sql.functions import countDistinct\n\nvine_only.agg(countDistinct(vine_only.product_id).alias(\u0027c\u0027)).collect()",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:45:33.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "[Row(c\u003d149705)]",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-174325_724465676",
+      "dateCreated": "2019-05-06 17:43:25.000",
+      "dateStarted": "2019-05-06 17:45:27.240",
+      "dateFinished": "2019-05-06 17:45:33.922",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nvine_only_set \u003d dataframe.filter(dataframe[\"vine\"] \u003d\u003d \"Y\").select([\"customer_id\", \"product_id\", \"product_title\", \"star_rating\", \"helpful_votes\", \"total_votes\", \"vine\"])",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:46:54.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-174427_1507652190",
+      "dateCreated": "2019-05-06 17:44:27.000",
+      "dateStarted": "2019-05-06 17:46:54.037",
+      "dateFinished": "2019-05-06 17:46:54.199",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nvine_only_set.agg(countDistinct(vine_only_set.product_id).alias(\u0027c\u0027)).collect()",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:47:23.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "[Row(c\u003d176)]",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-174653_1391038327",
+      "dateCreated": "2019-05-06 17:46:53.000",
+      "dateStarted": "2019-05-06 17:47:16.952",
+      "dateFinished": "2019-05-06 17:47:23.230",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nvine_no_set \u003d dataframe.filter(dataframe[\"vine\"] \u003d\u003d \"N\").select([\"customer_id\", \"product_id\", \"product_title\", \"star_rating\", \"helpful_votes\", \"total_votes\", \"vine\"])",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:55:59.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-174716_25361000",
+      "dateCreated": "2019-05-06 17:47:16.000",
+      "dateStarted": "2019-05-06 17:55:59.244",
+      "dateFinished": "2019-05-06 17:55:59.407",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nvine_no_set.agg(countDistinct(vine_only_set.product_id).alias(\u0027c\u0027)).collect()",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:56:25.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "[Row(c\u003d149694)]",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-175559_636007462",
+      "dateCreated": "2019-05-06 17:55:59.000",
+      "dateStarted": "2019-05-06 17:56:18.514",
+      "dateFinished": "2019-05-06 17:56:25.193",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nvine_titles \u003d vine_only_set.select([\"product_id\"])",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:57:52.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-175618_1987647402",
+      "dateCreated": "2019-05-06 17:56:18.000",
+      "dateStarted": "2019-05-06 17:57:52.474",
+      "dateFinished": "2019-05-06 17:57:52.586",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nvine_titles_only \u003d vine_titles.dropDuplicates()\n\nvine_titles_only.show(5)",
+      "user": "",
+      "dateUpdated": "2019-05-06 17:58:50.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+----------+\n|product_id|\n+----------+\n|B005FMZX9Q|\n|B0057Z253I|\n|B00ATUKQG4|\n|B005FN0XY0|\n|B00HA062MS|\n+----------+\nonly showing top 5 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-175725_1917079293",
+      "dateCreated": "2019-05-06 17:57:25.000",
+      "dateStarted": "2019-05-06 17:58:44.498",
+      "dateFinished": "2019-05-06 17:58:50.279",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nnew_df \u003d vine_no_set.join(vine_titles_only, vine_no_set.product_id \u003d\u003d vine_titles.product_id, \u0027inner\u0027).select(vine_no_set.customer_id, vine_no_set.product_id, vine_no_set.product_title, vine_no_set.star_rating, vine_no_set.helpful_votes, vine_no_set.total_votes, vine_no_set.vine)\n\nnew_df.show(5)",
+      "user": "",
+      "dateUpdated": "2019-05-06 18:03:29.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+-----------+----------+--------------------+-----------+-------------+-----------+----+\n|customer_id|product_id|       product_title|star_rating|helpful_votes|total_votes|vine|\n+-----------+----------+--------------------+-----------+-------------+-----------+----+\n|   20869514|B005FMZX9Q|Invicta Men\u0027s 151...|          5|            0|          0|   N|\n|   17563004|B005FMZX9Q|Invicta Men\u0027s 151...|          5|            0|          0|   N|\n|   10702793|B005FMZX9Q|Invicta Men\u0027s 151...|          5|            0|          0|   N|\n|   16266974|B005FMZX9Q|Invicta Men\u0027s 151...|          5|            1|          1|   N|\n|    1853901|B005FMZX9Q|Invicta Men\u0027s 151...|          5|            0|          0|   N|\n+-----------+----------+--------------------+-----------+-------------+-----------+----+\nonly showing top 5 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-175844_2143549170",
+      "dateCreated": "2019-05-06 17:58:44.000",
+      "dateStarted": "2019-05-06 18:03:20.929",
+      "dateFinished": "2019-05-06 18:03:29.534",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nnew_df.agg(countDistinct(new_df.product_id).alias(\u0027c\u0027)).collect()",
+      "user": "",
+      "dateUpdated": "2019-05-06 18:04:28.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "[Row(c\u003d165)]",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-180320_103934888",
+      "dateCreated": "2019-05-06 18:03:20.000",
+      "dateStarted": "2019-05-06 18:04:20.890",
+      "dateFinished": "2019-05-06 18:04:28.522",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nnew_df.count()",
+      "user": "",
+      "dateUpdated": "2019-05-06 18:05:03.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "8536",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-180420_641772424",
+      "dateCreated": "2019-05-06 18:04:20.000",
+      "dateStarted": "2019-05-06 18:04:55.295",
+      "dateFinished": "2019-05-06 18:05:03.411",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nnew_df2 \u003d test_df.join(vine_titles_only, test_df.product_id \u003d\u003d vine_titles.product_id, \u0027inner\u0027).select(test_df.customer_id, test_df.product_id, test_df.product_title, test_df.star_rating, test_df.helpful_votes, test_df.total_votes, test_df.vine)\n\nnew_df2.show(5)",
+      "user": "",
+      "dateUpdated": "2019-05-06 18:08:01.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+-----------+----------+--------------------+-----------+-------------+-----------+----+\n|customer_id|product_id|       product_title|star_rating|helpful_votes|total_votes|vine|\n+-----------+----------+--------------------+-----------+-------------+-----------+----+\n|   20869514|B005FMZX9Q|Invicta Men\u0027s 151...|          5|            0|          0|   N|\n|   17563004|B005FMZX9Q|Invicta Men\u0027s 151...|          5|            0|          0|   N|\n|   10702793|B005FMZX9Q|Invicta Men\u0027s 151...|          5|            0|          0|   N|\n|   16266974|B005FMZX9Q|Invicta Men\u0027s 151...|          5|            1|          1|   N|\n|    1853901|B005FMZX9Q|Invicta Men\u0027s 151...|          5|            0|          0|   N|\n+-----------+----------+--------------------+-----------+-------------+-----------+----+\nonly showing top 5 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-180455_364614134",
+      "dateCreated": "2019-05-06 18:04:55.000",
+      "dateStarted": "2019-05-06 18:07:52.948",
+      "dateFinished": "2019-05-06 18:08:01.414",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\navg_df2 \u003d new_df2.groupBy(\"vine\").avg()\navg_df2.show()",
+      "user": "",
+      "dateUpdated": "2019-05-06 18:08:29.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+----+--------------------+-----------------+------------------+------------------+\n|vine|    avg(customer_id)| avg(star_rating)|avg(helpful_votes)|  avg(total_votes)|\n+----+--------------------+-----------------+------------------+------------------+\n|   Y| 4.065158875386377E7|4.034344590726961|2.8580423583285635| 3.712077847738981|\n|   N|2.4488276285262417E7|4.213683223992502|0.9794985941893158|1.3118556701030928|\n+----+--------------------+-----------------+------------------+------------------+\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-180752_521615258",
+      "dateCreated": "2019-05-06 18:07:52.000",
+      "dateStarted": "2019-05-06 18:08:20.058",
+      "dateFinished": "2019-05-06 18:08:29.282",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nnew_df2.describe().show()",
+      "user": "",
+      "dateUpdated": "2019-05-06 18:10:09.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+-------+-------------------+----------+--------------------+-----------------+------------------+------------------+-----+\n|summary|        customer_id|product_id|       product_title|      star_rating|     helpful_votes|       total_votes| vine|\n+-------+-------------------+----------+--------------------+-----------------+------------------+------------------+-----+\n|  count|              10283|     10283|               10283|            10283|             10283|             10283|10283|\n|   mean|2.723429465370028E7|      null|                null|4.183215015073422|1.2986482544004667|1.7196343479529321| null|\n| stddev|1.652669900296005E7|      null|                null|1.190019725570875| 7.419016524217426| 8.163560359437863| null|\n|    min|              20147|B000FVE3AC|Akribos XXIV Men\u0027...|                1|                 0|                 0|    N|\n|    max|           53096363|B00V0G9OGE|kate spade new yo...|                5|               349|               370|    Y|\n+-------+-------------------+----------+--------------------+-----------------+------------------+------------------+-----+\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-180819_587213261",
+      "dateCreated": "2019-05-06 18:08:19.000",
+      "dateStarted": "2019-05-06 18:09:57.285",
+      "dateFinished": "2019-05-06 18:10:09.800",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "",
+      "user": "",
+      "dateUpdated": "2019-05-06 18:08:55.000",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-180855_1327202665",
+      "dateCreated": "2019-05-06 18:08:55.000",
+      "dateStarted": "2019-05-06 18:10:39.000",
+      "dateFinished": "2019-05-06 18:10:39.000",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    }
+  ],
+  "name": "Big_Data_HW_Watches_test",
+  "id": "99a5d4efb40b4ffd9871b825782d2519",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {},
+  "info": {}
+}
