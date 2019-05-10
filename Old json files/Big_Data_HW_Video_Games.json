@@ -1,0 +1,600 @@
+{
+  "paragraphs": [
+    {
+      "title": "",
+      "text": "%pyspark\n# Read in data from S3 Buckets\nfrom pyspark import SparkFiles\nurl \u003d\"https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Video_Games_v1_00.tsv.gz\"\nspark.sparkContext.addFile(url)\ndf \u003d spark.read.csv(SparkFiles.get(\"amazon_reviews_us_Video_Games_v1_00.tsv.gz\"), sep\u003d\"\\t\", header\u003dTrue)\n\n# Show DataFrame\ndf.show()",
+      "user": "",
+      "dateUpdated": "2019-05-06 14:59:47.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+-----------+-----------+--------------+----------+--------------+--------------------+----------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-----------+\n|marketplace|customer_id|     review_id|product_id|product_parent|       product_title|product_category|star_rating|helpful_votes|total_votes|vine|verified_purchase|     review_headline|         review_body|review_date|\n+-----------+-----------+--------------+----------+--------------+--------------------+----------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-----------+\n|         US|   12039526| RTIS3L2M1F5SM|B001CXYMFS|     737716809|Thrustmaster T-Fl...|     Video Games|          5|            0|          0|   N|                Y|an amazing joysti...|Used this for Eli...| 2015-08-31|\n|         US|    9636577| R1ZV7R40OLHKD|B00M920ND6|     569686175|Tonsee 6 buttons ...|     Video Games|          5|            0|          0|   N|                Y|Definitely a sile...|Loved it,  I didn...| 2015-08-31|\n|         US|    2331478|R3BH071QLH8QMC|B0029CSOD2|      98937668|Hidden Mysteries:...|     Video Games|          1|            0|          1|   N|                Y|            One Star|poor quality work...| 2015-08-31|\n|         US|   52495923|R127K9NTSXA2YH|B00GOOSV98|      23143350|GelTabz Performan...|     Video Games|          3|            0|          0|   N|                Y|good, but could b...|nice, but tend to...| 2015-08-31|\n|         US|   14533949|R32ZWUXDJPW27Q|B00Y074JOM|     821342511|Zero Suit Samus a...|     Video Games|          4|            0|          0|   N|                Y|   Great but flawed.|Great amiibo, gre...| 2015-08-31|\n|         US|    2377552|R3AQQ4YUKJWBA6|B002UBI6W6|     328764615|Psyclone Recharge...|     Video Games|          1|            0|          0|   N|                Y|            One Star|The remote consta...| 2015-08-31|\n|         US|   17521011|R2F0POU5K6F73F|B008XHCLFO|      24234603|Protection for yo...|     Video Games|          5|            0|          0|   N|                Y|              A Must|I have a 2012-201...| 2015-08-31|\n|         US|   19676307|R3VNR804HYSMR6|B00BRA9R6A|     682267517|   Nerf 3DS XL Armor|     Video Games|          5|            0|          0|   N|                Y|          Five Stars|Perfect, kids lov...| 2015-08-31|\n|         US|     224068| R3GZTM72WA2QH|B009EPWJLA|     435241890|One Piece: Pirate...|     Video Games|          5|            0|          0|   N|                Y|          Five Stars|            Excelent| 2015-08-31|\n|         US|   48467989| RNQOY62705W1K|B0000AV7GB|     256572651|Playstation 2 Dan...|     Video Games|          4|            0|          0|   N|                Y|          Four Stars|Slippery but expe...| 2015-08-31|\n|         US|     106569|R1VTIA3JTYBY02|B00008KTNN|     384411423|Metal Arms: Glitc...|     Video Games|          5|            0|          0|   N|                N|          Five Stars|Love the game. Se...| 2015-08-31|\n|         US|   48269642|R29DOU8791QZL8|B000A3IA0Y|     472622859|72 Pin Connector ...|     Video Games|          1|            0|          0|   N|                Y| Game will get stuck|Does not fit prop...| 2015-08-31|\n|         US|   52738710|R15DUT1VIJ9RJZ|B0053BQN34|     577628462|uDraw Gametablet ...|     Video Games|          2|            0|          0|   N|                Y|We have tried it ...|This was way too ...| 2015-08-31|\n|         US|   10556786|R3IMF2MQ3OU9ZM|B002I0HIMI|     988218515|NBA 2K12(Covers M...|     Video Games|          4|            0|          0|   N|                Y|          Four Stars|Works great good ...| 2015-08-31|\n|         US|    2963837|R23H79DHOZTYAU|B0081EH12M|     770100932|New Trigger Grips...|     Video Games|          1|            1|          1|   N|                Y|Now i have to buy...|It did not fit th...| 2015-08-31|\n|         US|   23092109| RIV24EQAIXA4O|B005FMLZQQ|      24647669|Xbox 360 Media Re...|     Video Games|          5|            0|          0|   N|                Y|          Five Stars|perfect lightweig...| 2015-08-31|\n|         US|   23091728|R3UCNGYDVN24YB|B002BSA388|      33706205|Super Mario Galaxy 2|     Video Games|          5|            0|          0|   N|                Y|          Five Stars|               great| 2015-08-31|\n|         US|   10712640| RUL4H4XTTN2DY|B00BUSLSAC|     829667834|Nintendo 3DS XL -...|     Video Games|          5|            0|          0|   N|                Y|          Five Stars|Works beautifully...| 2015-08-31|\n|         US|   17455376|R20JF7Z4DHTNX5|B00KWF38AW|     110680188|Captain Toad:  Tr...|     Video Games|          5|            0|          0|   N|                Y|          Five Stars|Kids loved the ga...| 2015-08-31|\n|         US|   14754850|R2T1AJ5MFI2260|B00BRQJYA8|     616463426|Lego Batman 2: DC...|     Video Games|          4|            0|          0|   N|                Y|          Four Stars|           Goodngame| 2015-08-31|\n+-----------+-----------+--------------+----------+--------------+--------------------+----------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-----------+\nonly showing top 20 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190505-015826_2057546415",
+      "dateCreated": "2019-05-05 01:58:26.000",
+      "dateStarted": "2019-05-06 14:58:30.304",
+      "dateFinished": "2019-05-06 14:59:47.143",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\nprint(df.count())\ndf \u003d df.dropna()\nprint(df.count())\ndf \u003d df.dropDuplicates()\nprint(df.count())",
+      "user": "",
+      "dateUpdated": "2019-05-06 15:02:02.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "1785997\n1785886\n1785886\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-141341_362016817",
+      "dateCreated": "2019-05-06 14:13:41.000",
+      "dateStarted": "2019-05-06 14:59:47.154",
+      "dateFinished": "2019-05-06 15:02:02.110",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\ndf.printSchema",
+      "user": "",
+      "dateUpdated": "2019-05-06 15:02:02.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "\u003cbound method DataFrame.printSchema of DataFrame[marketplace: string, customer_id: string, review_id: string, product_id: string, product_parent: string, product_title: string, product_category: string, star_rating: string, helpful_votes: string, total_votes: string, vine: string, verified_purchase: string, review_headline: string, review_body: string, review_date: string]\u003e",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190505-223902_1309128972",
+      "dateCreated": "2019-05-05 22:39:02.000",
+      "dateStarted": "2019-05-06 15:02:02.111",
+      "dateFinished": "2019-05-06 15:02:02.247",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nfrom pyspark.sql.types import StructField, StringType, IntegerType, StructType\nfrom pyspark.sql.types import DateType\n\nschema \u003d [StructField(\"marketplace\", StringType(), True),\\\n          StructField(\"customer_id\", IntegerType(), True),\\\n          StructField(\"review_id\", StringType(), True),\\\n          StructField(\"product_id\", StringType(), True),\\\n          StructField(\"product_parent\", IntegerType(), True),\\\n          StructField(\"product_title\", StringType(), True),\\\n          StructField(\"product_category\", StringType(), True),\\\n          StructField(\"star_rating\", IntegerType(), True),\\\n          StructField(\"helpful_votes\", IntegerType(), True),\\\n          StructField(\"total_votes\", IntegerType(), True),\\\n          StructField(\"vine\", StringType(), True),\\\n          StructField(\"verified_purchase\", StringType(), True),\\\n          StructField(\"review_headline\", StringType(), True),\\\n          StructField(\"review_body\", StringType(), True),\\\n          StructField(\"review_date\", DateType(), True)\\\n          ,]\n\nschema",
+      "user": "",
+      "dateUpdated": "2019-05-06 15:02:02.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "[StructField(marketplace,StringType,true),\n StructField(customer_id,IntegerType,true),\n StructField(review_id,StringType,true),\n StructField(product_id,StringType,true),\n StructField(product_parent,IntegerType,true),\n StructField(product_title,StringType,true),\n StructField(product_category,StringType,true),\n StructField(star_rating,IntegerType,true),\n StructField(helpful_votes,IntegerType,true),\n StructField(total_votes,IntegerType,true),\n StructField(vine,StringType,true),\n StructField(verified_purchase,StringType,true),\n StructField(review_headline,StringType,true),\n StructField(review_body,StringType,true),\n StructField(review_date,DateType,true)]",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190505-223925_257291736",
+      "dateCreated": "2019-05-05 22:39:25.000",
+      "dateStarted": "2019-05-06 15:02:02.248",
+      "dateFinished": "2019-05-06 15:02:02.366",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nfinal \u003d StructType(fields\u003dschema)\nfinal",
+      "user": "",
+      "dateUpdated": "2019-05-06 15:02:02.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "StructType(List(StructField(marketplace,StringType,true),StructField(customer_id,IntegerType,true),StructField(review_id,StringType,true),StructField(product_id,StringType,true),StructField(product_parent,IntegerType,true),StructField(product_title,StringType,true),StructField(product_category,StringType,true),StructField(star_rating,IntegerType,true),StructField(helpful_votes,IntegerType,true),StructField(total_votes,IntegerType,true),StructField(vine,StringType,true),StructField(verified_purchase,StringType,true),StructField(review_headline,StringType,true),StructField(review_body,StringType,true),StructField(review_date,DateType,true)))",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190505-223955_735291032",
+      "dateCreated": "2019-05-05 22:39:55.000",
+      "dateStarted": "2019-05-06 15:02:02.369",
+      "dateFinished": "2019-05-06 15:02:02.482",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\ndataframe \u003d spark.read.csv(SparkFiles.get(\"amazon_reviews_us_Video_Games_v1_00.tsv.gz\"), sep\u003d\"\\t\", schema\u003dfinal, header\u003dTrue)\ndataframe.show(5)",
+      "user": "",
+      "dateUpdated": "2019-05-06 15:02:02.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+-----------+-----------+--------------+----------+--------------+--------------------+----------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-----------+\n|marketplace|customer_id|     review_id|product_id|product_parent|       product_title|product_category|star_rating|helpful_votes|total_votes|vine|verified_purchase|     review_headline|         review_body|review_date|\n+-----------+-----------+--------------+----------+--------------+--------------------+----------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-----------+\n|         US|   12039526| RTIS3L2M1F5SM|B001CXYMFS|     737716809|Thrustmaster T-Fl...|     Video Games|          5|            0|          0|   N|                Y|an amazing joysti...|Used this for Eli...| 2015-08-31|\n|         US|    9636577| R1ZV7R40OLHKD|B00M920ND6|     569686175|Tonsee 6 buttons ...|     Video Games|          5|            0|          0|   N|                Y|Definitely a sile...|Loved it,  I didn...| 2015-08-31|\n|         US|    2331478|R3BH071QLH8QMC|B0029CSOD2|      98937668|Hidden Mysteries:...|     Video Games|          1|            0|          1|   N|                Y|            One Star|poor quality work...| 2015-08-31|\n|         US|   52495923|R127K9NTSXA2YH|B00GOOSV98|      23143350|GelTabz Performan...|     Video Games|          3|            0|          0|   N|                Y|good, but could b...|nice, but tend to...| 2015-08-31|\n|         US|   14533949|R32ZWUXDJPW27Q|B00Y074JOM|     821342511|Zero Suit Samus a...|     Video Games|          4|            0|          0|   N|                Y|   Great but flawed.|Great amiibo, gre...| 2015-08-31|\n+-----------+-----------+--------------+----------+--------------+--------------------+----------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-----------+\nonly showing top 5 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190505-224024_1287543680",
+      "dateCreated": "2019-05-05 22:40:24.000",
+      "dateStarted": "2019-05-06 15:02:02.486",
+      "dateFinished": "2019-05-06 15:02:02.757",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nreview_id_table \u003d dataframe.select([\"review_id\", \"customer_id\", \"product_id\", \"product_parent\", \"review_date\"])\n\nreview_id_table.show(5)\n",
+      "user": "",
+      "dateUpdated": "2019-05-06 15:02:02.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+--------------+-----------+----------+--------------+-----------+\n|     review_id|customer_id|product_id|product_parent|review_date|\n+--------------+-----------+----------+--------------+-----------+\n| RTIS3L2M1F5SM|   12039526|B001CXYMFS|     737716809| 2015-08-31|\n| R1ZV7R40OLHKD|    9636577|B00M920ND6|     569686175| 2015-08-31|\n|R3BH071QLH8QMC|    2331478|B0029CSOD2|      98937668| 2015-08-31|\n|R127K9NTSXA2YH|   52495923|B00GOOSV98|      23143350| 2015-08-31|\n|R32ZWUXDJPW27Q|   14533949|B00Y074JOM|     821342511| 2015-08-31|\n+--------------+-----------+----------+--------------+-----------+\nonly showing top 5 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-072444_1538253535",
+      "dateCreated": "2019-05-06 07:24:44.000",
+      "dateStarted": "2019-05-06 15:02:02.760",
+      "dateFinished": "2019-05-06 15:02:02.973",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nproducts \u003d dataframe.select([\"product_id\", \"product_title\"])\n\nproducts.show(5)\n\n",
+      "user": "",
+      "dateUpdated": "2019-05-06 15:02:03.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+----------+--------------------+\n|product_id|       product_title|\n+----------+--------------------+\n|B001CXYMFS|Thrustmaster T-Fl...|\n|B00M920ND6|Tonsee 6 buttons ...|\n|B0029CSOD2|Hidden Mysteries:...|\n|B00GOOSV98|GelTabz Performan...|\n|B00Y074JOM|Zero Suit Samus a...|\n+----------+--------------------+\nonly showing top 5 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-072702_1336406284",
+      "dateCreated": "2019-05-06 07:27:02.000",
+      "dateStarted": "2019-05-06 15:02:02.975",
+      "dateFinished": "2019-05-06 15:02:03.199",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\ncustomer_table \u003d dataframe.select([\"customer_id\"])\n\ncustomer_table.show(10)",
+      "user": "",
+      "dateUpdated": "2019-05-06 15:02:03.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+-----------+\n|customer_id|\n+-----------+\n|   12039526|\n|    9636577|\n|    2331478|\n|   52495923|\n|   14533949|\n|    2377552|\n|   17521011|\n|   19676307|\n|     224068|\n|   48467989|\n+-----------+\nonly showing top 10 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-142317_1738029589",
+      "dateCreated": "2019-05-06 14:23:17.000",
+      "dateStarted": "2019-05-06 15:02:03.200",
+      "dateFinished": "2019-05-06 15:02:03.363",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\ndef dfZipWithIndex(df, offset\u003d1, colName\u003d\"rowId\"):\n\n\n    new_schema \u003d StructType(\n\n        df.schema.fields  # previous schema\n        +[StructField(colName, LongType(), True)]  # new added field to back\n    )\n\n    zipped_rdd \u003d df.rdd.zipWithIndex()\n\n    new_rdd \u003d zipped_rdd.map(lambda (row, rowId): (list(row) + [rowId + offset] ))\n\n    return spark.createDataFrame(new_rdd, new_schema)",
+      "user": "",
+      "dateUpdated": "2019-05-06 15:02:03.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-052837_1662736019",
+      "dateCreated": "2019-05-06 05:28:37.000",
+      "dateStarted": "2019-05-06 15:02:03.371",
+      "dateFinished": "2019-05-06 15:02:03.484",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nfrom pyspark.sql.types import LongType\ncustomer_table \u003d dfZipWithIndex(customer_table, offset\u003d1, colName\u003d\"customer_count\")\n\ncustomer_table.show(10)",
+      "user": "",
+      "dateUpdated": "2019-05-06 15:02:04.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+-----------+--------------+\n|customer_id|customer_count|\n+-----------+--------------+\n|   12039526|             1|\n|    9636577|             2|\n|    2331478|             3|\n|   52495923|             4|\n|   14533949|             5|\n|    2377552|             6|\n|   17521011|             7|\n|   19676307|             8|\n|     224068|             9|\n|   48467989|            10|\n+-----------+--------------+\nonly showing top 10 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-060150_1276682592",
+      "dateCreated": "2019-05-06 06:01:50.000",
+      "dateStarted": "2019-05-06 15:02:03.486",
+      "dateFinished": "2019-05-06 15:02:04.955",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nvine_table \u003d dataframe.select([\"review_id\", \"star_rating\", \"helpful_votes\", \"total_votes\", \"vine\"])\n\nvine_table.show(5)\n",
+      "user": "",
+      "dateUpdated": "2019-05-06 15:02:05.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+--------------+-----------+-------------+-----------+----+\n|     review_id|star_rating|helpful_votes|total_votes|vine|\n+--------------+-----------+-------------+-----------+----+\n| RTIS3L2M1F5SM|          5|            0|          0|   N|\n| R1ZV7R40OLHKD|          5|            0|          0|   N|\n|R3BH071QLH8QMC|          1|            0|          1|   N|\n|R127K9NTSXA2YH|          3|            0|          0|   N|\n|R32ZWUXDJPW27Q|          4|            0|          0|   N|\n+--------------+-----------+-------------+-----------+----+\nonly showing top 5 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-145139_822682775",
+      "dateCreated": "2019-05-06 14:51:39.000",
+      "dateStarted": "2019-05-06 15:02:04.957",
+      "dateFinished": "2019-05-06 15:02:05.170",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\navg_df \u003d vine_table.groupBy(\"vine\").avg()\navg_df.show()",
+      "user": "",
+      "dateUpdated": "2019-05-06 15:02:20.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+----+-----------------+------------------+------------------+\n|vine| avg(star_rating)|avg(helpful_votes)|  avg(total_votes)|\n+----+-----------------+------------------+------------------+\n|   Y|4.074807737124213| 2.348403635516197|3.2780237706828244|\n|   N|4.059856676690767| 2.259134784302236| 3.758523011091617|\n+----+-----------------+------------------+------------------+\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190506-144535_650053761",
+      "dateCreated": "2019-05-06 14:45:35.000",
+      "dateStarted": "2019-05-06 15:02:05.172",
+      "dateFinished": "2019-05-06 15:02:20.935",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    }
+  ],
+  "name": "Big_Data_HW_Video_Games",
+  "id": "99a5d4efb40b4ffd9871b825782d2519",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {},
+  "info": {}
+}
